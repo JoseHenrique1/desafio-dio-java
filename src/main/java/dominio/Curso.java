@@ -1,32 +1,17 @@
 package dominio;
 
-import java.time.LocalDate;
+public class Curso extends Conteudo {
 
-public class Curso {
-    private String mentoria;
-    private String descricao;
     private int cargaHoraria;
 
-    public Curso(String mentoria, String descricao, int cargaHoraria) {
-        this.mentoria = mentoria;
-        this.descricao = descricao;
+    public Curso(String titulo, String descricao, int cargaHoraria) {
+        super(titulo, descricao);
         this.cargaHoraria = cargaHoraria;
     }
 
-    public String getMentoria() {
-        return mentoria;
-    }
-
-    public void setMentoria(String mentoria) {
-        this.mentoria = mentoria;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    @Override
+    public double calcularXP() {
+        return 0;
     }
 
     public int getCargaHoraria() {
@@ -40,8 +25,8 @@ public class Curso {
     @Override
     public String toString() {
         return "Curso{" +
-                "mentoria='" + mentoria + '\'' +
-                ", descricao='" + descricao + '\'' +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
                 ", cargaHoraria=" + cargaHoraria +
                 '}';
     }

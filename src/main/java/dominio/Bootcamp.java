@@ -9,10 +9,19 @@ import java.util.Set;
 public class Bootcamp {
     private String nome;
     private String descricao;
-    private final LocalDate dataInicial = LocalDate.now();
-    private final LocalDate dataFinal = dataInicial.plusDays(45);
-    private Set<Dev> devsInscritos = new HashSet<>();
-    private Set<Conteudo> conteudos = new LinkedHashSet<>();
+    private final LocalDate dataInicial;
+    private final LocalDate dataFinal;
+    private Set<Dev> devsInscritos;
+    private Set<Conteudo> conteudos;
+
+    public Bootcamp(String nome, String descricao) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.dataInicial = LocalDate.now();
+        this.dataFinal = dataInicial.plusDays(45);
+        this.devsInscritos = new HashSet<>();
+        this.conteudos = new LinkedHashSet<>();
+    }
 
     @Override
     public boolean equals(Object o) {
